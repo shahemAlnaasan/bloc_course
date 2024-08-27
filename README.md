@@ -1,6 +1,6 @@
 # bloc_course
 
-Bloc:
+BloC:
 Bloc stands for Business Logic Component, and it is a state management pattern that helps in separating the UI components from the business logic.
 It helps in managing state and make access to data from a central place in our project.
 relies on events to trigger state changes rather than functions.
@@ -35,5 +35,13 @@ Now to access bloc data in UI we need to provide this bloc to the widget tree so
   -BlocConsumer:
     . This widget combines both BlocListener and BlocBuilder.
     . So we can build a widget using build property and showing a snackbar using listener property
+
+Cubit
+ - When we use cubit, we can only send “states” and to trigger these states we can do it by calling a function (like actions)
+ - The Big difference between BLoC and Cubit is that “BLoC is Event-Driven and Cubit not.”
+ - The choice between Bloc and Provider largely depends on the complexity and requirements of your project.
+ - Cubit can be used in the same way that Bloc is used to access data in UI
+
+
 
    
