@@ -1,10 +1,10 @@
 # bloc_course
 
 BloC:
-Bloc stands for Business Logic Component, and it is a state management pattern that helps in separating the UI components from the business logic
-It helps in managing state and make access to data from a central place in our project.
-relies on events to trigger state changes rather than functions.
-receive events and convert the incoming events into outgoing states.
+-Bloc stands for Business Logic Component, and it is a state management pattern that helps in separating the UI components from the business logic
+-It helps in managing state and make access to data from a central place in our project.
+-relies on events to trigger state changes rather than functions.
+-receive events and convert the incoming events into outgoing states.
 
  - Bloc takes an event triggered by the user like changeAppTheme Button as an input, and responds back to the UI with the relevant state.
  - When you use flutter bloc you are going to create events to trigger the interactions with the app and then the bloc in charge is going to emit the requested data with a state
