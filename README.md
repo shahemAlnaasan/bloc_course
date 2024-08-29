@@ -1,7 +1,7 @@
 # bloc_course
 
 BloC:
-Bloc stands for Business Logic Component, and it is a state management pattern that helps in separating the UI components from the business logic.
+Bloc stands for Business Logic Component, and it is a state management pattern that helps in separating the UI components from the business logic
 It helps in managing state and make access to data from a central place in our project.
 relies on events to trigger state changes rather than functions.
 receive events and convert the incoming events into outgoing states.
