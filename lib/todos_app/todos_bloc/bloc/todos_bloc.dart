@@ -1,4 +1,4 @@
-import 'package:bloc/bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:bloc_course/api/todo_api.dart';
 import 'package:bloc_course/todos_app/todo_class.dart';
 import 'package:equatable/equatable.dart';
@@ -13,7 +13,7 @@ class TodosBloc extends Bloc<TodosEvent, TodosState> {
       if (event is GetAllTodosEvent) {
         emit(LoadingState());
         try {
-          final todos = await todoApi.getAllApi();
+          final todos = await TodoApi.getAllApi();
           emit(LoadedState(todos));
         } catch (e) {
           emit(const ErrorState("Somthing went Wrong Please try again later"));

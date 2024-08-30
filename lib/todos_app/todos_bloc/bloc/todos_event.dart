@@ -8,3 +8,12 @@ sealed class TodosEvent extends Equatable {
 }
 
 class GetAllTodosEvent extends TodosEvent {}
+
+class GetTodoDetailsEvent extends TodosEvent {
+  final int todosId;
+
+  const GetTodoDetailsEvent({required this.todosId});
+
+  @override
+  List<Object> get props => [todosId];
+}

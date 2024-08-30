@@ -59,7 +59,7 @@ class _PostsPageState extends State<PostsPage> {
                       : PostistItem(posts: state.posts[i]);
                 });
           } else {
-            return Center(
+            return const Center(
               child: Text("Error"),
             );
           }

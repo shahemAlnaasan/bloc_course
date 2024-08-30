@@ -4,17 +4,17 @@ import 'package:bloc_course/todos_app/todo_class.dart';
 import 'package:http/http.dart' as http;
 
 class TodoApi {
-  Future<List<Todo>> getAllApi() async {
+  static Future<List<Todo>> getAllApi() async {
     try {
-      const String url = 'https://jsonplaceholder.typicode.com/todos/1';
+      String url = 'https://jsonplaceholder.typicode.com/todos';
 
       var response = await http.get(Uri.parse(url));
 
-      List<Todo> todos = (json.decode(response.body))
-          .map<Todo>((jsonTodo) => Todo.fromJson(jsonTodo))
+      List<Todo> posts = (json.decode(response.body))
+          .map<Todo>((jsonPost) => Todo.fromJson(jsonPost))
           .toList();
 
-      return todos;
+      return posts;
     } catch (e) {
       rethrow;
     }

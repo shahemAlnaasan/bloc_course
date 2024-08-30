@@ -10,6 +10,7 @@ import 'package:bloc_course/posts_app/posts_page.dart';
 import 'package:bloc_course/theme/theme_cubit/theme_cubit.dart';
 import 'package:bloc_course/api/todo_api.dart';
 import 'package:bloc_course/todos_app/todos_bloc/bloc/todos_bloc.dart';
+import 'package:bloc_course/todos_app/todos_bloc/todos_v2/todos_v2_bloc.dart';
 import 'package:bloc_course/todos_app/todos_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -40,14 +41,17 @@ class MyApp extends StatelessWidget {
               create: (context) =>
                   TodosBloc(todoApi: TodoApi())..add(GetAllTodosEvent())),
           BlocProvider(
-              create: (context) => PostsBloc()..add(GetAllPostsEvent()))
+              create: (context) => PostsBloc()..add(GetAllPostsEvent())),
+          BlocProvider(
+              create: (context) =>
+                  TodosV2Bloc()..add(const TodosV2Event.getAllTodos())),
         ],
         child: BlocBuilder<ThemeCubit, ThemeState>(
           builder: (context, state) {
             if (state is LoadedThemeState) {
               return MaterialApp(
                 theme: state.themeData,
-                home: const PostsPage(),
+                home: const TodosPage(),
               );
             }
             return Container();
